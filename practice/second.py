@@ -13,3 +13,6 @@ df.show()
 df1 = df.groupby('gender').count()
 df1.show()
 
+df2 = df.filter(df.gender == 'M')
+df2.show()
+
