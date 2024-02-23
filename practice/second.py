@@ -10,3 +10,6 @@ df = spark.read.format('csv').option('header','true') \
                              .load('D:/Data/test123.csv')
 df.show()
 
+df1 = df.groupby('gender').count()
+df1.show()
+
