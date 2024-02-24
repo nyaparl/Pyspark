@@ -1,16 +1,28 @@
+import os
+import csv
+from pyspark.sql import SparkSession
+
+print(os.getcwd())
+spark = SparkSession.builder.appName('first') \
+                    .master('local[*]').getOrCreate()
+
 
 l1 = [(1,'I love to play cricket'),(2,'I am into motorbiking'),(3,'What do you like')]
+cols = ['id','text']
 
-for e in l1:
-    length = len(e)
+if os.path.exists("input.csv"):
+    os.remove("input.csv")
 
-    if (length == 1):
-        print(" {} ".format(e[0]))
-    elif (length == 2):
-        print(" {} \t {}".format(e[0],e[1]))
-    elif (length == 3):
-        print(" {} \t {} \t {} ".format(e[0], e[1], e[2]))
-    elif (length == 4):
-        print(" {} \t {} \t {} \t {} ".format(e[0], e[1], e[2], e[3]))
-    elif (length == 5):
-        print(" {} \t {} \t {} \t {} \t {} ".format(e[0], e[1], e[2], e[3], e[4]))
+with open("input.csv", 'w', newline='') as file:
+    writer = csv.writer(file)
+
+    writer.writerow(cols)
+
+    for e in l1:
+        writer.writerow(list(e))
+
+df = spark.read.format('csv').option('header','true') \
+                             .option('inferSchema','true') \
+                             .load('C:/Users/User/PycharmProjects/Pyspark/practice/input.csv')
+df.show(truncate=False)
+
