@@ -1,5 +1,6 @@
 from sessionCreation import *
 
+# Spark session created.
 spark = sparkSession()
 
 l1 = [(1,'I love to play cricket'),(2,'I am into motorbiking'),(3,'What do you like')]
