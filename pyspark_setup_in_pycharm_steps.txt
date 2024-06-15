@@ -1,0 +1,56 @@
+1) Create the Hadoop and Spark folders in C Drive
+
+   Hadoop  --> Place the winutils.exe into this folder
+   Spark   --> Place the spark into this folder
+
+SPARK_HOME = C:\Spark\spark-3.5.0-bin-hadoop3
+HADOOP_HOME = C:\Hadoop
+JAVA_HOME = C:\Program Files\Java\jdk-22
+
+for Path variable
+
+C:\Spark\spark-3.5.0-bin-hadoop3\bin
+C:\Hadoop\bin
+C:\Program Files\Java\jdk-22\bin
+C:\Spark\spark-3.5.0-bin-hadoop3\python
+C:\Spark\spark-3.5.0-bin-hadoop3\python\lib\py4j-0.10.9.7-src.zip
+
+************************************************************************************************************
+2) After above setup done (folders and environment variables setup), then execute below commmad
+
+   spark-submit --version
+  
+   C:\Users\admen>spark-submit --version (Output as below should come)
+
+
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /___/ .__/\_,_/_/ /_/\_\   version 3.5.0
+      /_/
+
+Using Scala version 2.12.18, Java HotSpot(TM) 64-Bit Server VM, 22.0.1
+Branch HEAD
+Compiled by user ubuntu on 2023-09-09T01:53:20Z
+Revision ce5ddad990373636e94071e7cef2f31021add07b
+Url https://github.com/apache/spark
+Type --help for more information.
+
+C:\Users\admen>
+
+*************************************************************************************************
+
+3) Once above command sucessfull, then install python and pycharm on windows
+
+   1) Open the pycharm project and click on the settings and select the project structure
+   2) After that click on the Add content root and specifify the path (C:\Spark\spark-3.5.0-bin-hadoop3\python\lib)
+      And select the below two files
+
+     py4j-0.10.9.7-src
+     pyspark.zip
+
+*************************************************************************************************************
+
+  
+
